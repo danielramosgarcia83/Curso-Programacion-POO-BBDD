@@ -1,0 +1,24 @@
+h1{
+	color:blue;
+	text-align:center;
+}
+
+h2{
+	color:red;
+	text-align:right;
+}
+
+/* afectaria a los ul */
+nav ul{
+	list-style:none;
+	width:100%;
+	padding:0;
+	
+}
+
+/* afectaria a los li */
+nav ul li{
+	float:left;
+	width:25%;
+	text-align:center;
+}

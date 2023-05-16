@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido1" placeholder="Primer apellido">
+        <input type="text" id="apellido2" placeholder="Segundo apellido">
+        <input type="button" value="Grabar" onclick=enviardatos()><br><br>
+        <h1></h1>
+    </form>
+</body>
+    <script>
+        function enviardatos()
+        {
+            var Nombre;
+            var papellido;
+            var sapellido;
+            nombre= $("input#nombre").val();
+            papellido= $("input#apellido1").val();
+            sapellido= $("input#apellido2").val();
+            
+            if(nombre != "" && papellido != "" && sapellido != "")
+            {
+                $.post //es una funcion, con 3 parametros (URL,DATOS,funcion que recoje los datos echos que hace el php)
+                (
+                    "./graba.php",
+                    {nom:nombre, ap1:papellido, ap2:sapellido}, //nom es como el name del input, que viaja por POST y lo captura el php
+                    function(resultado)
+                    {
+                        //alert(resultado); aqui es un mensaje en pantalla
+                        $("h1").text(resultado);
+                        $("input[type='text']").val(""); //Borrar todos los input text, sino pones text borraria todos los input incluido el button
+                    }
+
+                );
+            }
+            else
+            {
+                alert("No puedes dejar inputs vacios");
+            }
+        }
+    </script>
+
+</html>

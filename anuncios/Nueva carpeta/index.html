@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+	<button id="b1" onclick="registra(this.id)">Contacto</button>
+	<button id="b2" onclick="registra(this.id)">Historia</button>
+	<button id="b3" onclick="registra(this.id)">Nosotros</button>
+
+	<script type="text/javascript">
+		function registra(identificador)
+		{
+			var texto;
+			texto = $("#"+identificador).text();
+			$.post(
+					"./grabar.php",
+					{dato:texto},
+					function(recibo)
+					{
+						//alert(recibo);
+					}
+				);
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<input type="text" onkeydown="copia_texto()">
+		<br>
+		<p></p>
+		<br>
+		<button onclick="borrar()">Limpiar</button>
+		
+		
+		
+		<script>
+			function copia_texto()
+			{	//lo siguiente, es la forma de declarar una variable en script, en este caso, la variable "texto"
+				var texto;
+				texto=$("input").val(); //el $ es como se llama a la etiqueta, val() vacio lee lo que tiene.
+				$("p").text(texto); //Le diremos que la envie a la etiqueta "p"
+			}
+			
+			function borrar()
+			{
+				$("input").val("");
+				$("p").text("");
+				$("input").focus();
+				
+			}
+		</script>
+		
+	</body>
+</html>

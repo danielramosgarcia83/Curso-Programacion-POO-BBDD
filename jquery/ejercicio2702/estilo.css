@@ -1,0 +1,44 @@
+.todo{
+    width: 100%;
+}
+
+.menu{
+    width: 100%;
+    float: left;
+    text-align: left;
+    margin-left: 25%;
+}
+
+.ahref{
+    width: 100%;
+    float: left;
+}
+
+.imagenes{
+    width: 100%;
+    float: left;
+}
+
+.inputs{
+    width: 100%;
+    float: left;
+}
+
+body{
+    width: 50%;
+    text-align: center;
+}
+input{
+    width: 16.25%;
+    margin: 0;
+    padding: 0;
+}
+textarea{
+    width: 50%;
+    background-color:silver;
+    text-align: center;
+}
+
+img{
+    width: 15%;
+}

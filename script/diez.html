@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		
+	</head>
+	
+	<body>
+		
+		<form action="diez.php" method="POST" enctype="multipart/form-data">
+			<input type="hidden" name="contador" id="numero" value=1><br>
+			<div class="fichero">
+				<input type='file' name='archivo1'><br>
+			</div>
+			<div>
+			
+				<input type="button" onclick="anadiruno()" value="+"> <!--"button" es el unico que hace algo sin que prime el form, a diferencia del type="submit" o al <button>-->
+				<br>
+				<input type="submit" value="Enviar">
+			</div>
+		
+		</form>
+			
+		<script>
+			function anadiruno()
+			{
+				var cajetin;
+				var contador;
+				contador=parseInt($("input#numero").val());
+				contador++;
+				$("input#numero").val(contador);
+				cajetin="<input type='file' name='archivo"+contador+"'><br>";
+				$("div.fichero").append(cajetin);
+			}
+		</script>
+		
+	</body>
+</html>

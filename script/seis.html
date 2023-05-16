@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<button onclick="mostrar_formulario('clientes','productos')">Alta clientes</button>
+		<button onclick="mostrar_formulario('productos','clientes')">Alta Producto</button>
+		<hr>
+		<form id="clientes" style="display:none">
+			<input type="text" placeholder="Nombre">
+			<input type="text" placeholder="Apellidos">
+			<input type="submit" value="Grabar cliente">
+		</form>
+		
+		<form id="productos" style="display:none">
+			<input type="text" placeholder="Nombre producto">
+			<input type="text" placeholder="Descripción producto">
+			<input type="text" placeholder="Precio">
+			<input type="submit" value="Grabar producto">
+		</form>
+		
+		<script>
+			function mostrar_formulario(mostrar,ocultar)
+			{
+				$("form#"+mostrar).show(1000);
+				$("form#"+ocultar).hide(1000);
+			}
+			
+		</script>
+	</body>
+</html>

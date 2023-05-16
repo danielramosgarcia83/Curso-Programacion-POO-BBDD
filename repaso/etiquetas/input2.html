@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form action="" method="post">
+        <input id="pass1" type="text" placeholder="PASSWORD...">
+        <br>
+		<input id="pass2" type="text" placeholder="REPITE PASSWORD...">
+        <br>
+            <span style="display: none;">Las contraseñas no coinciden</span>
+        <br>
+        <input type="button" value="Enviar" onclick="comparar()">
+    </form>
+
+    <script>
+	
+		function comparar()
+		{
+			var p1;
+			var p2;
+			
+			p1=$("#pass1").val();
+			p2=$("#pass2").val();
+			
+			
+			if (p1==p2)
+			
+			{
+				if(p1=="" && p1=="")
+				{
+					$("span").show();
+					$("span").text("No dejes campos vacios");
+					$("span").css("background-color","pink");
+				}
+				else
+				{
+					$("span").show();
+					$("span").text("Las contraseñas coinciden");
+					$("span").css("background-color","cyan");
+					
+				}
+				
+			}
+			else
+			{
+				$("span").show();
+				$("span").text("Las contraseñas no coinciden");
+				$("span").css("background-color","red");
+				
+			}
+			
+			
+			
+		}
+	
+    </script>
+
+</body>
+</html>

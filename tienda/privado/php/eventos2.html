@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<button onclick="encender()">Mostrar Todo</button>
+<button onclick="hacer('p')">Mostrar SOLO etiqueta P</button>
+<button onclick="hacer('input')">Mostrar SOLO INPUT</button>
+<div style="display:none;" id="papuchi";>
+<p onclick>Hola</p>
+<label>Hola</label>
+<input placeholder="Hola">
+<div id="julito">Hola</div>
+<a href="">Hola</a>
+</div>
+    <script>    
+        function apagar() {
+            $("#papuchi").show();
+            $("p").hide();
+            $("#julito").hide();
+            $("label").hide();
+            $("input").hide();
+            $("a").hide();
+        }
+        function encender() {
+            $("#papuchi").show();
+            $("p").show();
+            $("#julito").show();
+            $("label").show();
+            $("input").show();
+            $("a").show();
+        }
+
+        function hacer(etiqueta){
+
+            apagar();
+            $(etiqueta).show();
+        }
+
+    </script>
+</body>
+</html>

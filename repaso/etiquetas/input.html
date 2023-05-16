@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+    <form action="" method="post">
+        <input id="nombre" type="text" placeholder="Escribe tu nombre por favor" onkeyup="borrar()">
+        <br>
+            <span style="display: none;">Me cago en tu raza, NO TE PEDI EL NOMBRE POR FAVOR???? RELLENALO!!!!</span>
+        <br>
+        <input type="button" value="Enviar" onclick="comprobar()">
+    </form>
+
+    <script>
+	
+        function comprobar()
+        {
+            if (!$("#nombre").val())
+            
+            {
+                $("span").show();
+                $("span").css("color","red");
+				$("#nombre").focus();
+				$("#nombre").css("background-color","pink");
+            }
+           
+        }
+		
+		function borrar()
+		
+		{
+			$("span").hide();
+			$("#nombre").css("background-color","white");
+			comprobar();
+		
+		}
+		
+
+    </script>
+
+</body>
+</html>

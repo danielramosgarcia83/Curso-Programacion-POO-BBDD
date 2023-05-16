@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<button onclick="mostrar()">Mostrar Todo</button>
+<button onclick="mostrarp()">Mostrar SOLO etiqueta P</button>
+<button onclick="mostrarinput()">Mostrar SOLO INPUT</button>
+<div style="display:none;" id="papuchi";>
+<p onclick>Hola</p>
+<label>Hola</label>
+<input placeholder="Hola">
+<div id="julito">Hola</div>
+<a href="">Hola</a>
+</div>
+    <script>
+        
+        function mostrar() {
+            $("#papuchi").show();
+            $("p").show();
+            $("label").show();
+            $("input").show();
+            $("#julito").show();
+            $("a").show();
+        }
+        function apagar() {
+            $("#papuchi").show();
+            $("p").hide();
+            $("#julito").hide();
+            $("label").hide();
+            $("input").hide();
+            $("a").hide();
+        }
+
+        function mostrarinput() {
+            apagar();
+            $("input").show();
+        }
+
+        function mostrarp() {
+            apagar();
+            $("p").show();
+        }
+    </script>
+</body>
+</html>

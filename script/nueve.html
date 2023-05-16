@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		
+	</head>
+	
+	<body>
+		<p onmouseover="alert()">Párrafo Uno</p> 		<!-- cuando el raton pasa por arriba -->
+		<p onclick="cambiacolor()">Párrafo Dos</p>
+		<p onmouseleave="cambiatexto()">Párrafo Tres</p> 		<!-- cuando el raton sale de la etiqueta -->
+		<p onclick="cambiafuente()">Párrafo Cuatro</p>
+		<p onclick="borratodo()">Párrafo Cinco</p>
+		
+			
+		<script>
+		
+			function cambiacolor()
+			{
+				$("p").css("background-color","red");
+			}
+			
+			function cambiatexto()
+			{
+				$("p").text("Corre carmela que chove");
+			}
+			
+			function cambiafuente()
+			{
+				$("p").css("font-family","Courier");
+			}
+			
+			function borratodo()
+			{
+				$("p").text("");
+				$("p").css("background-color","white");
+			}
+		
+		</script>
+		
+	</body>
+</html>

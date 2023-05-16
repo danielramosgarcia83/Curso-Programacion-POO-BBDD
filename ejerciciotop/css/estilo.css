@@ -1,0 +1,64 @@
+
+
+body{
+	margin:0;
+	
+}
+
+.cabeza{
+	width:100%;
+	background:gray;
+	float:left;
+}
+
+.logo{
+	background:cyan;
+	float:left;
+	width:10%;
+	background-image: url("./logo.png");
+	background-size:contain;
+	height:110px;
+}
+
+.menu{
+	background:gray;
+	float:left;
+	width:90%;
+
+	
+}
+
+.cuerpo{
+	width:100%;
+	float:left;
+	
+	
+	
+}
+
+.menuiz{
+	float:left;
+	width:10%;
+	background:gray;
+	height:900px;
+}
+
+
+.menuiz ul  {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+.menuiz ul li button {
+	width:100%;
+}
+
+.nombre{
+	float:left;
+	width:90%;
+	background:pink;
+	height:900px;
+	
+}
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" id="textoabuscar" placeholder="Nombre...." onkeyup="abuscar()">
+    <hr>
+    <p id="resultados"></p>
+
+    <script>
+        function abuscar()
+        {
+            var texto;
+            texto = $("#textoabuscar").val();
+            $.post //3 partes
+            (
+                "./busca.php", //1)a donde va
+                {dato:texto}, //2)lo que envia
+                function(resultadophp) //3)Lo que recibe
+                {
+                    $("#resultados").text(resultadophp);
+                }
+
+            )
+        }
+
+    </script>
+</body>
+</html>

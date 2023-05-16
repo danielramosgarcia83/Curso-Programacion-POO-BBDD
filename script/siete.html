@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<style>
+			div{
+			float:left;
+			}
+				
+			.izquierda{
+			
+			width:50%;
+			}
+			
+			input{
+				width:80%;
+				margin-left:10%;
+			}
+			
+			.derecha{
+			
+			width:50%;
+			}
+			
+			button{
+			width:10%;
+			margin-left:80%;
+			}
+			
+		</style>	
+	</head>
+	<body>
+		<form>
+			<div class="izquierda">
+				<input id="nombre" type="text" placeholder="Escribir" onkeyup="repetir_nombre()">
+				<input id="apellido" type="text" placeholder="Escribir" onkeyup="repetir_apellido()">
+				<input id="direccion" type="text" placeholder="Escribir" onkeyup="repetir_direccion()">
+			</div>
+			
+			
+			<div class="derecha">
+				<input id="pasar_nombre" type="text" readonly>
+				<input id="pasar_apellido" type="text" readonly>
+				<input id="pasar_direccion" type="text" readonly>
+				
+			</div>
+			
+		
+		
+		</form>
+				<button onclick="mostrar_ocultar()">Mostrar/Ocultar</button>
+		<script>
+			function mostrar_ocultar()
+			{
+				$("div.derecha").toggle(1200);
+			}
+		
+			function repetir_nombre()
+			{
+				var texto;
+				texto=$("input#nombre").val();
+				$("input#pasar_nombre").val(texto);
+			}
+			function repetir_apellido()
+			{
+				var texto;
+				texto=$("input#apellido").val();
+				$("input#pasar_apellido").val(texto);
+			}
+			function repetir_direccion()
+			{
+				var texto;
+				texto=$("input#direccion").val();
+				$("input#pasar_direccion").val(texto);
+			}
+			
+			
+		</script>
+	</body>
+</html>

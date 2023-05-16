@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<body class="todo">
+    <div class="menu">
+            <button onclick="limpiar()">LIMPIAR</button>
+    </div><br>
+    <div class="ahref">
+        <a id="e1" href="https://www.w3schools.com" onmouseover="enlace(this.id)">W3SCHOOLS</a>
+        <a id="e2" href="https://pythoninstitute.org/" onmouseover="enlace(this.id)">PYTHON</a>
+        <a id="e3" href="https://www.amazon.es/" onmouseover="enlace(this.id)">AMAZON</a>
+        <br><br>
+    </div>
+    <div class="imagenes">
+        <img id="img1" src="./img1.jpg" onclick="ruta(this.id)">
+        <img id="img2" src="./img2.jpg" onclick="ruta(this.id)">
+        <img id="img3" src="./img3.jpg" onclick="ruta(this.id)">
+        <br><br>
+    </div>
+    <div class="inputs">
+        <input type="text" id="input1" onkeyup="input(this.id)" onclick="borrainput(this.id)">
+        <input type="text" id="input2" onkeyup="input(this.id)" onclick="borrainput(this.id)">
+        <input type="text" id="input3" onkeyup="input(this.id)"onclick="borrainput(this.id)">
+        <br><br>
+    </div>
+    <div class="texto">
+        <textarea>TEXTO A MOSTRAR</textarea>
+    </div>
+
+<script>
+
+    function limpiar(){
+        $("textarea").text("");
+    }
+
+    function enlace(id){
+        var enlace;
+        enlace=$("#"+id).attr("href");
+        $("textarea").val(enlace);
+
+    }
+
+    function ruta(id){
+        var ruta;
+        ruta=$("#"+id).attr("src");
+        $("textarea").text(ruta);
+    }
+
+    function borrainput(id){
+        $("#"+id).val("");
+    }
+
+    function input(id){
+        $("textarea").text("Estas Escribiendo en el input"+id);
+    }
+
+</script>
+
+</body>
+</html>

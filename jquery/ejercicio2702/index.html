@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Document</title>
+</head>
+<body class="todo">
+    <div class="menu">
+            <button onclick="limpiar1()">LIMPIAR</button>
+    </div><br>
+    <div class="ahref">
+        <a id="e1" href="https://www.w3schools.com" onmouseover="enlance1()">W3SCHOOLS</a>
+        <a id="e2" href="https://pythoninstitute.org/" onmouseover="enlance2()">PYTHON</a>
+        <a id="e3" href="https://www.amazon.es/" onmouseover="enlance3()">AMAZON</a>
+        <br><br>
+    </div>
+    <div class="imagenes">
+        <img id="img1" src="./img1.jpg" onclick="ruta1()">
+        <img id="img2" src="./img2.jpg" onclick="ruta2()">
+        <img id="img3" src="./img3.jpg" onclick="ruta3()">
+        <br><br>
+    </div>
+    <div class="inputs">
+        <input type="text" id="input1" onkeyup="input1()">
+        <input type="text" id="input2" onkeyup="input2()">
+        <input type="text" id="input3" onkeyup="input3()">
+        <br><br>
+    </div>
+    <div class="texto">
+        <textarea>TEXTO A MOSTRAR</textarea>
+    </div>
+
+<script>
+
+    function limpiar1(){
+        $("textarea").text("");
+    }
+
+    function enlance1(){
+        var enlace1;
+        enlace1=$("#e1").attr("href");
+        $("textarea").text(enlace1);
+
+    }
+
+    function enlance2(){
+        var enlace2;
+        enlace2=$("#e2").attr("href");
+        $("textarea").text(enlace2);
+
+    }
+
+    function enlance3(){
+        var enlace3;
+        enlace3=$("#e3").attr("href");
+        $("textarea").text(enlace3);
+
+    }
+
+    function ruta1(){
+        var ruta1;
+        ruta1=$("#img1").attr("src");
+        $("textarea").text(ruta1);
+
+    }
+
+    function ruta2(){
+        var ruta2;
+        ruta2=$("#img2").attr("src");
+        $("textarea").text(ruta2);
+
+    }
+
+    function ruta3(){
+        var ruta3;
+        ruta3=$("#img3").attr("src");
+        $("textarea").text(ruta3);
+    }
+
+    function input1(){
+        $("textarea").text("Estas Escribiendo en el input1");
+    }
+    function input2(){
+        $("textarea").text("Estas Escribiendo en el input2");
+    }
+    function input3(){
+        $("textarea").text("Estas Escribiendo en el input3");
+    }
+</script>
+
+</body>
+</html>

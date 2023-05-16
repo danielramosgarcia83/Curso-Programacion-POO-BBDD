@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>ADMINISTRADOR MODO DIOS</H1>
+    <form action="graba.php" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre..." maxlength="50" required>
+        <br>
+        <input type="email" name="email" placeholder="Email..." maxlength="100" required>
+        <br>
+        <input type="password" name="pass" placeholder="Password..." maxlength="100" required>
+        <br>
+        <select name="rol" required>
+            <option value="">Selecciona rol</option>
+            <option value="1">Todo</option>
+            <option value="2">Altas</option>
+            <option value="3">Consulta</option>
+        </select>
+        <input type="submit" value="Grabar">
+
+    </form>
+</body>
+</html>
+
+<?php
+/*
+ * recoger datos form
+ * hash password
+ * sql grabar
+ * ejecuto preguntando
+ * si bien, mensaje a index
+ * si mal, mensaje a index
+ */
+
+$nom=$_POST["nombre"];
+$ema=$_POST["email"];
+$pas=$_POST["pass"];
+$rol=$_POST["rol"];
+
+$passencriptada=password_hash($pas,PASSWORD_DEFAULT);
+$con=NEW mysqli("localhost","root","","ensal");
+$sql="INSERT INTO administradores (nom_adm, email_adm, pass_adm, rol_adm)
+    VALUES ('$nom','$ema','$passencriptada','$rol')";
+if($con->query($sql))
+{
+    //grabó
+    echo "
+    <script>
+        alert('Administrador Registrado');
+        windows.location.href='index.html';
+    </script>
+    ";
+}
+else
+{
+    //No grabó
+    echo "
+    <script>
+        alert('Ocurrió un error');
+        windows.location.href='index.html';
+    </script>
+    ";
+}
+
+/**
+ * index (login) ira a principal:una pantalla q permite dar de alta alumno, consulta, alta admin (no es dios)
+ * cada documento tendra un menu en la cabecera: inicio, alta alumno,consulta,Alta administrador, salir, "Mi nombre" 
+ */
+?>
